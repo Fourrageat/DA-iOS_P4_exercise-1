@@ -19,7 +19,7 @@ struct ToDoListView: View {
                     Text("Not Done").tag(2)
                 }
                 .pickerStyle(.segmented)
-                .padding(.horizontal)
+                .padding()
                 
                 // List of tasks
                 List {
