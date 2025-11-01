@@ -13,7 +13,16 @@ struct ToDoListView: View {
         NavigationView {
             VStack {
                 // Filter selector
-                // TODO: - Add a filter selector which will call the viewModel for updating the displayed data
+                Picker("Filter", selection: $filterIndex) {
+                    Text("All").tag(0)
+                    Text("Done").tag(1)
+                    Text("Not Done").tag(2)
+                }
+                .pickerStyle(.segmented)
+                .padding()
+                .onChange(of: filterIndex) { newIndex in
+                    viewModel.applyFilter(at: newIndex)
+                }
                 // List of tasks
                 List {
                     ForEach(viewModel.toDoItems) { item in
