@@ -27,8 +27,8 @@ final class ToDoListViewModel: ObservableObject {
     /// Published list of to-do items reflecting the current filter.
     @Published var toDoItems: [ToDoItem] = [] {
         didSet {
-            print("apres")
-            print(sourceToDoItems)
+            print("apres") // TODO: - clean this
+            print(sourceToDoItems) // TODO: - clean this
             // Persist the full, unfiltered collection whenever items change.
             repository.saveToDoItems(sourceToDoItems)
         }
