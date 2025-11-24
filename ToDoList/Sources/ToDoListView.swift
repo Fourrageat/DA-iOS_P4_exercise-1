@@ -23,7 +23,6 @@ struct ToDoListView: View {
                 .onChange(of: filterIndex) { newIndex in
                     viewModel.applyFilter(at: newIndex)
                 }
-                // List of tasks
                 List {
                     ForEach(viewModel.toDoItems) { item in
                         HStack {
